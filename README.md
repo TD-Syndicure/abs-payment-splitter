@@ -26,30 +26,6 @@ Platform wallet updates (contract owner only)
 Stuck ETH withdrawal (platform wallet only)
 
 ##Usage
-Eth payments only, use Zero values for ERC20 and permit
-```ts
-await splitter.payWithPermit(
-    {
-        projectWallet: "0xProject...",
-        referralWallet: "0xReferral...",
-        projectAmount: ethers.parseEther("0.8"),
-        platformAmount: ethers.parseEther("0.2"),
-        referralCutBps: 1000  // 10% of platformAmount
-    },
-    {
-        token: ethers.ZeroAddress,
-        projectWallet: ethers.ZeroAddress,
-        amount: 0
-    },
-    {
-        owner: ethers.ZeroAddress,
-        value: 0,
-        deadline: 0,
-        v: 0, r: ethers.ZeroHash, s: ethers.ZeroHash
-    },
-    { value: ethers.parseEther("1.0") }
-);```
-
 Eth payments only, use Zero values for ERC20 and permit, if no referrer or project provide Zero values
 For ERC20 verify signatures before submission
 ```ts
